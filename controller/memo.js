@@ -1,7 +1,11 @@
 const usecase = require("../usecase");
 
-exports.getAll = (req, res, next) => {
+exports.getAll = async (req, res, next) => {
   console.log(req, next);
-  const memos = usecase.memo.getAll();
-  return res.status(200).send({ memos: memos });
+  try {
+    const memos = await usecase.memo.getAll();
+    return res.status(200).send({ memos: memos });
+  } catch (e) {
+    return res.status(500).send({ error: String(e), message: "error occured" });
+  }
 };

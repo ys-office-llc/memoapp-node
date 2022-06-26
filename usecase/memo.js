@@ -1,6 +1,11 @@
 const service = require("../service");
 
-exports.getAll = () => {
-  const memos = service.memo.getAll();
-  return memos;
+exports.getAll = async () => {
+  try {
+    const memos = await service.memo.getAll();
+    return memos;
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
 };
