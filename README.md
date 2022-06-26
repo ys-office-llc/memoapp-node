@@ -1,1 +1,1 @@
-# memoapp-node
+# Node.js を使ってメモアプリを作成する記録
