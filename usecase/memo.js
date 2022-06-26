@@ -27,3 +27,12 @@ exports.update = async (id, checked) => {
     throw e;
   }
 };
+
+exports.delete = async (id) => {
+  try {
+    await service.memo.delete(id);
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};
