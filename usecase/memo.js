@@ -18,3 +18,12 @@ exports.create = async (message, checked) => {
     throw e;
   }
 };
+
+exports.update = async (id, checked) => {
+  try {
+    await service.memo.update(id, checked);
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};
